@@ -14,6 +14,9 @@
 		A827AA47240E9DB900DD261E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A827AA46240E9DB900DD261E /* Assets.xcassets */; };
 		A827AA4A240E9DB900DD261E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A827AA49240E9DB900DD261E /* Preview Assets.xcassets */; };
 		A827AA4D240E9DB900DD261E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A827AA4B240E9DB900DD261E /* LaunchScreen.storyboard */; };
+		A827AA57240EB18B00DD261E /* SleepCalculator.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A827AA56240EB18B00DD261E /* SleepCalculator.mlmodel */; };
+		A847440C240FF8EC00D71A18 /* SleepAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = A847440B240FF8EC00D71A18 /* SleepAmount.swift */; };
+		A8474410241000A000D71A18 /* Drinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A847440F241000A000D71A18 /* Drinks.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		A827AA49240E9DB900DD261E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A827AA4C240E9DB900DD261E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A827AA4E240E9DB900DD261E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A827AA56240EB18B00DD261E /* SleepCalculator.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SleepCalculator.mlmodel; sourceTree = "<group>"; };
+		A847440B240FF8EC00D71A18 /* SleepAmount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepAmount.swift; sourceTree = "<group>"; };
+		A847440F241000A000D71A18 /* Drinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drinks.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +48,8 @@
 		A827AA31240E9DB500DD261E = {
 			isa = PBXGroup;
 			children = (
+				A847440F241000A000D71A18 /* Drinks.swift */,
+				A847440B240FF8EC00D71A18 /* SleepAmount.swift */,
 				A827AA3C240E9DB500DD261E /* NapMonitor */,
 				A827AA3B240E9DB500DD261E /* Products */,
 			);
@@ -64,6 +72,7 @@
 				A827AA46240E9DB900DD261E /* Assets.xcassets */,
 				A827AA4B240E9DB900DD261E /* LaunchScreen.storyboard */,
 				A827AA4E240E9DB900DD261E /* Info.plist */,
+				A827AA56240EB18B00DD261E /* SleepCalculator.mlmodel */,
 				A827AA41240E9DB500DD261E /* NapMonitor.xcdatamodeld */,
 				A827AA48240E9DB900DD261E /* Preview Content */,
 			);
@@ -151,8 +160,11 @@
 			files = (
 				A827AA3E240E9DB500DD261E /* AppDelegate.swift in Sources */,
 				A827AA40240E9DB500DD261E /* SceneDelegate.swift in Sources */,
+				A827AA57240EB18B00DD261E /* SleepCalculator.mlmodel in Sources */,
+				A847440C240FF8EC00D71A18 /* SleepAmount.swift in Sources */,
 				A827AA45240E9DB500DD261E /* ContentView.swift in Sources */,
 				A827AA43240E9DB500DD261E /* NapMonitor.xcdatamodeld in Sources */,
+				A8474410241000A000D71A18 /* Drinks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

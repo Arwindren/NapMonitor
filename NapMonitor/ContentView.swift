@@ -8,9 +8,69 @@
 
 import SwiftUI
 
-struct ContentView: View {
+
+struct ContentView: View {   
+    
+    @State private var wakeUp = defaultWakeTime
+    @State private var sleepAmount = 8.0
+    @State private var coffeeAmount = 1
+    
+    @State private var alertTitle = ""
+    @State private var alertMessage = ""
+    @State private var showingAlert = false
+  
+    
+    private static var defaultWakeTime: Date {
+        var components = DateComponents()
+        components.hour = 7
+        components.minute = 0
+        return Calendar.current.date(from: components) ??
+            Date()
+        
+        
+    }
+    
     var body: some View {
-        Text("Hello, World!")
+        ZStack {
+            
+            Color.blue
+            
+            NavigationView {
+                
+                VStack {
+                    GeometryReader { geo in
+                        Image("AlarmClock")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: geo.size.width)
+                    }
+                    
+                    VStack{
+                        VStack(alignment: .leading, spacing: 0){
+                            Text("When do you want to wake up?")
+                                .font(.headline)
+                            DatePicker("Please enter a time", selection: $wakeUp, displayedComponents: .hourAndMinute)
+                                .labelsHidden()
+                                .datePickerStyle(WheelDatePickerStyle())
+                    
+                            }
+                        }
+                         NavigationLink(destination: SleepAmount()) {
+                                          Text("Next")
+                                      }
+                        
+                        
+                    .navigationBarTitle("NapMonitor")
+                        
+                       
+                             }
+                            
+            .navigationViewStyle(StackNavigationViewStyle())
+        }
+    }
+    
+    
+
     }
 }
 
