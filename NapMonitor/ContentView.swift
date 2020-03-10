@@ -18,7 +18,7 @@ struct ContentView: View {
     @State private var alertTitle = ""
     @State private var alertMessage = ""
     @State private var showingAlert = false
-  
+    
     
     private static var defaultWakeTime: Date {
         var components = DateComponents()
@@ -52,25 +52,20 @@ struct ContentView: View {
                             DatePicker("Please enter a time", selection: $wakeUp, displayedComponents: .hourAndMinute)
                                 .labelsHidden()
                                 .datePickerStyle(WheelDatePickerStyle())
-                    
-                            }
-                        }
-                         NavigationLink(destination: SleepAmount()) {
-                                          Text("Next")
-                                      }
-                        
-                        
-                    .navigationBarTitle("NapMonitor")
-                        
-                       
-                             }
                             
-            .navigationViewStyle(StackNavigationViewStyle())
+                        }
+                        .padding(.trailing)
+                    }
+                    NavigationLink(destination: SleepAmount()) {
+                        Text("Next")
+                            .padding()
+                            .padding()
+                    }
+                    .navigationBarTitle("NapMonitor")
+                }
+                .navigationViewStyle(StackNavigationViewStyle())
+            }
         }
-    }
-    
-    
-
     }
 }
 
