@@ -30,45 +30,44 @@ struct SleepAmount: View {
     
     var body: some View {
         
-        ZStack {
+
             
-            Color.blue
             
-            NavigationView {
                 
-                VStack {
-                    GeometryReader { geo in
-                        Image("SleepWoman")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: geo.size.width)
-                            .padding()
-                    }
-                    
-                    
-                    VStack(alignment: .leading, spacing: 0) {
-                        Text("Desired amount of sleep")
-                            .font(.headline)
-                        Stepper(value: $sleepAmount, in: 4...12, step: 0.25) {
-                            Text("\(sleepAmount, specifier: "%g") hours")
-                            
-                        }
-                        
+            VStack {
+                GeometryReader { geo in
+                    Image("SleepWoman")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: geo.size.width)
+                        .padding()
+                }
+                
+                
+                VStack(alignment: .leading, spacing: 0) {
+                    Text("Desired amount of sleep")
+                        .font(.headline)
+                    Stepper(value: $sleepAmount, in: 4...12, step: 0.25) {
+                        Text("\(sleepAmount, specifier: "%g") hours")
                         
                     }
                     
-                    NavigationLink(destination: Drinks()) {
-                        Text("Next")
-                            
-                            .padding()
-                            .padding()
-                    }
+                    
+                }
+                
+                NavigationLink(destination: Drinks()) {
+                    Text("Next")
+                        
+                        .padding()
+                        .padding()
                 }
             }
                 
+                
             .navigationBarTitle("NapMonitor")
+            .font(.headline)
             
-        }
+      
     }
 }
 

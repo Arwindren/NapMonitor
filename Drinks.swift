@@ -30,12 +30,7 @@ struct Drinks: View {
     
     var body: some View {
         
-        ZStack {
-            
-            Color.blue
-            
-            NavigationView {
-                
+                       
                 VStack {
                     GeometryReader { geo in
                         Image("Coffee")
@@ -79,8 +74,7 @@ struct Drinks: View {
                 }
             }
             
-        }
-    }
+   
     
     func calculateBedtime() {
         let model = SleepCalculator()
