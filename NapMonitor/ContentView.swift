@@ -27,7 +27,6 @@ struct ContentView: View {
         return Calendar.current.date(from: components) ??
             Date()
         
-        
     }
     
     var body: some View {
@@ -49,24 +48,36 @@ struct ContentView: View {
                         VStack(alignment: .leading, spacing: 0){
                             Text("When do you want to wake up?")
                                 .font(.headline)
+                                .padding()
                             DatePicker("Please enter a time", selection: $wakeUp, displayedComponents: .hourAndMinute)
                                 .labelsHidden()
                                 .datePickerStyle(WheelDatePickerStyle())
                             
                         }
+                            
                         .padding(.trailing)
+                        
                     }
+                    
                     NavigationLink(destination: SleepAmount()) {
                         Text("Next")
                             .padding()
                             .padding()
+                        
                     }
+                        
                     .navigationBarTitle("NapMonitor")
+                    
                 }
+                    
                 .navigationViewStyle(StackNavigationViewStyle())
+                
             }
+            
         }
+        
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

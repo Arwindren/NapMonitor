@@ -30,49 +30,53 @@ struct Drinks: View {
     
     var body: some View {
         
-                       
-                VStack {
-                    GeometryReader { geo in
-                        Image("Coffee")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: geo.size.width)
-                            .padding()
-                        Spacer()
-                        Spacer()
-                        
-                        
-                    }
-                    
-                    
-                    VStack(alignment: .leading, spacing: 0) {
-                        Text("Daily coffee intake")
-                            .font(.headline)
-                        
-                        Stepper (value: $coffeeAmount, in: 0...20) {
-                            if coffeeAmount == 1 {
-                                Text("1 cup")
-                            } else {
-                                Text("\(coffeeAmount) cups")
-                            }
-                            
-                        }
-                        
-                    }
-                   
-                        
-                        
-                    .navigationBarItems(trailing:
-                        Button(action: calculateBedtime) {
-                            Text("Calculate")
-                        }
-                    )
-                        .alert(isPresented: $showingAlert) {
-                            Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")))
-                            
-                    }
-                }
+        
+        VStack {
+            GeometryReader { geo in
+                Image("Coffee")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: geo.size.width)
+                
+                Spacer()
+                
+                
+                
             }
+            
+            
+            VStack(alignment: .leading, spacing: 0) {
+                Text("Daily coffee intake")
+                    .font(.headline)
+                
+                Stepper (value: $coffeeAmount, in: 0...20) {
+                    if coffeeAmount == 1 {
+                        Text("1 cup")
+                    } else {
+                        Text("\(coffeeAmount) cups")
+                        
+                        
+                    }
+                    
+                }
+                Spacer()
+                
+                
+            }
+                
+                
+                
+            .navigationBarItems(trailing:
+                Button(action: calculateBedtime) {
+                    Text("Calculate")
+                }
+            )
+                .alert(isPresented: $showingAlert) {
+                    Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+                    
+            }
+        }
+    }
             
    
     

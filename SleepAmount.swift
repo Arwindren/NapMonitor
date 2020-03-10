@@ -24,50 +24,38 @@ struct SleepAmount: View {
         components.minute = 0
         return Calendar.current.date(from: components) ??
             Date()
-        
-        
     }
     
     var body: some View {
         
-
+        VStack {
+            GeometryReader { geo in
+                Image("SleepWoman1")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: geo.size.width)
+                    .padding()
+                Spacer()
+                Spacer()
+                
+            }
             
-            
-                
-            VStack {
-                GeometryReader { geo in
-                    Image("SleepWoman")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: geo.size.width)
-                        .padding()
-                }
-                
-                
-                VStack(alignment: .leading, spacing: 0) {
-                    Text("Desired amount of sleep")
-                        .font(.headline)
-                    Stepper(value: $sleepAmount, in: 4...12, step: 0.25) {
-                        Text("\(sleepAmount, specifier: "%g") hours")
-                        
-                    }
+            VStack(alignment: .leading, spacing: 0) {
+                Text("Desired amount of sleep")
+                    .font(.headline)
+                Stepper(value: $sleepAmount, in: 4...12, step: 0.25) {
+                    Text("\(sleepAmount, specifier: "%g") hours")
                     
-                    
-                }
-                
-                NavigationLink(destination: Drinks()) {
-                    Text("Next")
-                        
-                        .padding()
-                        .padding()
                 }
             }
-                
-                
-            .navigationBarTitle("NapMonitor")
-            .font(.headline)
             
-      
+            NavigationLink(destination: Drinks()) {
+                Text("Next")
+                    
+                    .padding()
+                    .padding()
+            }
+        }
     }
 }
 
