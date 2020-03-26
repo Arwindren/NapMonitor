@@ -18,8 +18,7 @@ struct ContentView: View {
     @State private var alertTitle = ""
     @State private var alertMessage = ""
     @State private var showingAlert = false
-    
-    
+
     private static var defaultWakeTime: Date {
         var components = DateComponents()
         components.hour = 7

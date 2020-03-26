@@ -16,7 +16,7 @@ struct Drinks: View {
     @State private var alertTitle = ""
     @State private var alertMessage = ""
     @State private var showingAlert = false
-    
+   
     
     private static var defaultWakeTime: Date {
         var components = DateComponents()
@@ -39,11 +39,8 @@ struct Drinks: View {
                     .frame(width: geo.size.width)
                 
                 Spacer()
-                
-                
-                
+        
             }
-            
             
             VStack(alignment: .leading, spacing: 0) {
                 Text("Daily coffee intake")
@@ -55,16 +52,12 @@ struct Drinks: View {
                     } else {
                         Text("\(coffeeAmount) cups")
                         
-                        
-                    }
+                        }
                     
                 }
                 Spacer()
                 
-                
             }
-                
-                
                 
             .navigationBarItems(trailing:
                 Button(action: calculateBedtime) {
@@ -77,8 +70,6 @@ struct Drinks: View {
             }
         }
     }
-            
-   
     
     func calculateBedtime() {
         let model = SleepCalculator()

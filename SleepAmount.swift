@@ -51,6 +51,7 @@ struct SleepAmount: View {
             
             NavigationLink(destination: Drinks()) {
                 Text("Next")
+                    
                     .font(.system(size: 20, weight: .bold))
                     .padding()
                     .padding()
