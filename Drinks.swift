@@ -17,7 +17,8 @@ struct Drinks: View {
     @State private var alertMessage = ""
     @State private var showingAlert = false
    
-    
+   @Environment(\.presentationMode) var presentationMode
+
     private static var defaultWakeTime: Date {
         var components = DateComponents()
         components.hour = 7
@@ -52,12 +53,15 @@ struct Drinks: View {
                     } else {
                         Text("\(coffeeAmount) cups")
                         
+                        
                         }
                     
                 }
                 Spacer()
                 
             }
+                
+             
                 
             .navigationBarItems(trailing:
                 Button(action: calculateBedtime) {
@@ -67,9 +71,12 @@ struct Drinks: View {
                 .alert(isPresented: $showingAlert) {
                     Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")))
                     
+                    
             }
+            
         }
     }
+    
     
     func calculateBedtime() {
         let model = SleepCalculator()
@@ -94,9 +101,12 @@ struct Drinks: View {
             
         }
         showingAlert = true
+        self.presentationMode.wrappedValue.dismiss()
         
     }
 }
+
+
 struct Drinks_Previews: PreviewProvider {
     static var previews: some View {
         Drinks()

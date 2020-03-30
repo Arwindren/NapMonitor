@@ -17,6 +17,7 @@ struct SleepAmount: View {
     @State private var alertMessage = ""
     @State private var showingAlert = false
     
+@Environment(\.presentationMode) var presentationMode
     
     private static var defaultWakeTime: Date {
         var components = DateComponents()
