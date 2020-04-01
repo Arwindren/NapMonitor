@@ -63,6 +63,7 @@ struct ContentView: View {
                     NavigationLink(destination: SleepAmount()) {
                         Text("Next")
                             .font(.system(size: 20, weight: .bold))
+                            
                             .padding()
                             .padding()
                         

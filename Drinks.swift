@@ -39,8 +39,6 @@ struct Drinks: View {
                     .aspectRatio(contentMode: .fit)
                     .frame(width: geo.size.width)
                 
-                Spacer()
-        
             }
             
             VStack(alignment: .leading, spacing: 0) {
@@ -55,8 +53,9 @@ struct Drinks: View {
                         
                         
                         }
-                    
+                
                 }
+                
                 Spacer()
                 
             }
