@@ -18,6 +18,9 @@ struct ContentView: View {
     @State private var alertTitle = ""
     @State private var alertMessage = ""
     @State private var showingAlert = false
+    @State private var show_modal: Bool = false
+    
+     @Environment(\.horizontalSizeClass) var horizontalSizeClass: UserInterfaceSizeClass?
 
     @Environment(\.presentationMode) var presentationMode
     
@@ -31,6 +34,7 @@ struct ContentView: View {
     }
     
     var body: some View {
+        
         ZStack {
             
             Color.blue

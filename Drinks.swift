@@ -16,9 +16,11 @@ struct Drinks: View {
     @State private var alertTitle = ""
     @State private var alertMessage = ""
     @State private var showingAlert = false
-   
-   @Environment(\.presentationMode) var presentationMode
-
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass: UserInterfaceSizeClass?
+    
+    
+    @Environment(\.presentationMode) var presentationMode
+    
     private static var defaultWakeTime: Date {
         var components = DateComponents()
         components.hour = 7
@@ -29,6 +31,7 @@ struct Drinks: View {
         
     }
     
+    
     var body: some View {
         
         
@@ -38,6 +41,7 @@ struct Drinks: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: geo.size.width)
+                    .padding()
                 
             }
             
@@ -52,15 +56,16 @@ struct Drinks: View {
                         Text("\(coffeeAmount) cups")
                         
                         
-                        }
-                
+                    }
+                    
+                    
                 }
                 
                 Spacer()
                 
             }
                 
-             
+                
                 
             .navigationBarItems(trailing:
                 Button(action: calculateBedtime) {
@@ -72,8 +77,11 @@ struct Drinks: View {
                     
                     
             }
+            .padding(.vertical, 8)
+            
             
         }
+        
     }
     
     
@@ -102,6 +110,7 @@ struct Drinks: View {
         showingAlert = true
         self.presentationMode.wrappedValue.dismiss()
         
+        
     }
 }
 
@@ -109,5 +118,6 @@ struct Drinks: View {
 struct Drinks_Previews: PreviewProvider {
     static var previews: some View {
         Drinks()
+        
     }
 }
