@@ -57,11 +57,9 @@ struct Drinks: View {
                         
                         
                     }
-                    
-                    
                 }
-                
-                Spacer()
+                .padding()
+                .frame(maxWidth: 400)
                 
             }
                 

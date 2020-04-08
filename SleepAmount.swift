@@ -52,6 +52,8 @@ struct SleepAmount: View {
                     
                 }
             }
+            .padding()
+            .frame(maxWidth: 400)
             
             NavigationLink(destination: Drinks()) {
                 Text("Next")
