@@ -83,7 +83,7 @@ struct ContentView: View {
                     
                 }
                     
-                .navigationBarTitle("NapTime")
+                .navigationBarTitle("Nap Estimation")
             }
             .navigationViewStyle(StackNavigationViewStyle())
             
