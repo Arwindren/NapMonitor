@@ -17,8 +17,9 @@ struct Drinks: View {
     @State private var alertMessage = ""
     @State private var showingAlert = false
     @Environment(\.horizontalSizeClass) var horizontalSizeClass: UserInterfaceSizeClass?
-
-    @Environment(\.presentationMode) var presentationMode
+    
+    
+    @EnvironmentObject var appState: AppState
     
     private static var defaultWakeTime: Date {
         var components = DateComponents()
@@ -30,9 +31,7 @@ struct Drinks: View {
         
     }
     
-    
     var body: some View {
-        
         
         VStack {
             GeometryReader { geo in
@@ -61,17 +60,27 @@ struct Drinks: View {
                 .frame(maxWidth: 400)
                 
             }
-         
+            Button(action: {
+                self.appState.moveToDashboard = true
+            }) {
+                Text("Dismiss")
+                    
+                    .font(.system(size: 20, weight: .bold))
+                    .padding()
+                    .padding()
+                
+            }
+                
             .navigationBarItems(trailing:
                 Button(action: calculateBedtime) {
                     Text("Calculate")
+                    
                 }
+                
             )
                 .alert(isPresented: $showingAlert) {
                     Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")))
-                    
-                    
-                    
+                
             }
             .padding(.vertical, 8)
             
@@ -103,15 +112,12 @@ struct Drinks: View {
             alertMessage = "Sorry, there was a problem calculating your bedtime."
             
         }
+        
         showingAlert = true
-        
-       
-        
         
     }
     
 }
-
 
 struct Drinks_Previews: PreviewProvider {
     static var previews: some View {

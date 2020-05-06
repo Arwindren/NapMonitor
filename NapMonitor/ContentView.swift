@@ -20,11 +20,11 @@ struct ContentView: View {
     @State private var showingAlert = false
     @State private var show_modal: Bool = false
     
-     @Environment(\.horizontalSizeClass) var horizontalSizeClass: UserInterfaceSizeClass?
+    @EnvironmentObject var appState: AppState
+    @State var isSleepAmountActive: Bool = false
     
-
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass: UserInterfaceSizeClass?
    
-   @Environment(\.presentationMode) var presentationMode
     
     private static var defaultWakeTime: Date {
         var components = DateComponents()
@@ -66,16 +66,24 @@ struct ContentView: View {
                         
                     }
                     
-                    NavigationLink(destination: SleepAmount()) {
-                        Text("Next")
-                            .font(.system(size: 20, weight: .bold))
-                            
-                            .padding()
-                            .padding()
+                    NavigationLink(destination: SleepAmount(), isActive: $isSleepAmountActive) {
+                                Text("Next")
+                                      
+                                              .font(.system(size: 20, weight: .bold))
+                                              .padding()
+                                              .padding()
+                            }
+                            .isDetailLink(false)
+                        }
+                        .onReceive(self.appState.$moveToDashboard) { moveToDashboard in
+                            if moveToDashboard {
+                                
+                                self.isSleepAmountActive = false
+                                self.appState.moveToDashboard = false
+                            }
+                     
                         
-                    }
-                        
-                    .navigationBarTitle("NapMonitor")
+                   
                     
                 }
                     
