@@ -53,7 +53,6 @@ struct Drinks: View {
                     } else {
                         Text("\(coffeeAmount) cups")
                         
-                        
                     }
                 }
                 .padding()

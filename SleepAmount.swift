@@ -18,7 +18,7 @@ struct SleepAmount: View {
     @State private var showingAlert = false
     
     @Environment(\.horizontalSizeClass) var horizontalSizeClass: UserInterfaceSizeClass?
-   
+    
     private static var defaultWakeTime: Date {
         var components = DateComponents()
         components.hour = 7

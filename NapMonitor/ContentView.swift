@@ -18,13 +18,13 @@ struct ContentView: View {
     @State private var alertTitle = ""
     @State private var alertMessage = ""
     @State private var showingAlert = false
-    @State private var show_modal: Bool = false
+    
     
     @EnvironmentObject var appState: AppState
     @State var isSleepAmountActive: Bool = false
     
     @Environment(\.horizontalSizeClass) var horizontalSizeClass: UserInterfaceSizeClass?
-   
+    
     
     private static var defaultWakeTime: Date {
         var components = DateComponents()
@@ -67,27 +67,23 @@ struct ContentView: View {
                     }
                     
                     NavigationLink(destination: SleepAmount(), isActive: $isSleepAmountActive) {
-                                Text("Next")
-                                      
-                                              .font(.system(size: 20, weight: .bold))
-                                              .padding()
-                                              .padding()
-                            }
-                            .isDetailLink(false)
-                        }
-                        .onReceive(self.appState.$moveToDashboard) { moveToDashboard in
-                            if moveToDashboard {
-                                
-                                self.isSleepAmountActive = false
-                                self.appState.moveToDashboard = false
-                            }
-                     
-                        
-                   
+                        Text("Next")
+                            
+                            .font(.system(size: 20, weight: .bold))
+                            .padding()
+                            .padding()
+                    }
+                    .isDetailLink(false)
+                }
+                .onReceive(self.appState.$moveToDashboard) { moveToDashboard in
+                    if moveToDashboard {
+                        self.isSleepAmountActive = false
+                        self.appState.moveToDashboard = false
+                    }
                     
                 }
                     
-                
+                .navigationBarTitle("NapTime")
             }
             .navigationViewStyle(StackNavigationViewStyle())
             
@@ -100,5 +96,7 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+        .environmentObject(AppState())
+        
     }
 }
