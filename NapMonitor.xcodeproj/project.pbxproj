@@ -22,7 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A827AA3A240E9DB500DD261E /* NapEstimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NapEstimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A827AA3A240E9DB500DD261E /* NapMonitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NapMonitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A827AA3D240E9DB500DD261E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A827AA3F240E9DB500DD261E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A827AA42240E9DB500DD261E /* NapMonitor.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NapMonitor.xcdatamodel; sourceTree = "<group>"; };
@@ -62,7 +62,7 @@
 		A827AA3B240E9DB500DD261E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A827AA3A240E9DB500DD261E /* NapEstimation.app */,
+				A827AA3A240E9DB500DD261E /* NapMonitor.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -110,7 +110,7 @@
 			);
 			name = NapMonitor;
 			productName = NapMonitor;
-			productReference = A827AA3A240E9DB500DD261E /* NapEstimation.app */;
+			productReference = A827AA3A240E9DB500DD261E /* NapMonitor.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -319,7 +319,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = nl.arwink.NapMonitor;
-				PRODUCT_NAME = NapEstimation;
+				PRODUCT_NAME = NapMonitor;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -340,7 +340,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = nl.arwink.NapMonitor;
-				PRODUCT_NAME = NapEstimation;
+				PRODUCT_NAME = NapMonitor;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
