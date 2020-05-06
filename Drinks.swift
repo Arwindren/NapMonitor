@@ -17,8 +17,7 @@ struct Drinks: View {
     @State private var alertMessage = ""
     @State private var showingAlert = false
     @Environment(\.horizontalSizeClass) var horizontalSizeClass: UserInterfaceSizeClass?
-    
-    
+
     @Environment(\.presentationMode) var presentationMode
     
     private static var defaultWakeTime: Date {
@@ -62,9 +61,7 @@ struct Drinks: View {
                 .frame(maxWidth: 400)
                 
             }
-                
-                
-                
+         
             .navigationBarItems(trailing:
                 Button(action: calculateBedtime) {
                     Text("Calculate")
@@ -72,6 +69,7 @@ struct Drinks: View {
             )
                 .alert(isPresented: $showingAlert) {
                     Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+                    
                     
                     
             }
@@ -106,10 +104,12 @@ struct Drinks: View {
             
         }
         showingAlert = true
-        self.presentationMode.wrappedValue.dismiss()
+        
+       
         
         
     }
+    
 }
 
 
@@ -119,3 +119,4 @@ struct Drinks_Previews: PreviewProvider {
         
     }
 }
+

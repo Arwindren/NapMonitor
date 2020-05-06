@@ -21,8 +21,10 @@ struct ContentView: View {
     @State private var show_modal: Bool = false
     
      @Environment(\.horizontalSizeClass) var horizontalSizeClass: UserInterfaceSizeClass?
+    
 
-    @Environment(\.presentationMode) var presentationMode
+   
+   @Environment(\.presentationMode) var presentationMode
     
     private static var defaultWakeTime: Date {
         var components = DateComponents()
