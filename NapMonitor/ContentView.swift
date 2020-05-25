@@ -14,17 +14,12 @@ struct ContentView: View {
     @State private var wakeUp = defaultWakeTime
     @State private var sleepAmount = 8.0
     @State private var coffeeAmount = 1
-    
     @State private var alertTitle = ""
     @State private var alertMessage = ""
     @State private var showingAlert = false
-    
-    
     @EnvironmentObject var appState: AppState
     @State var isSleepAmountActive: Bool = false
-    
     @Environment(\.horizontalSizeClass) var horizontalSizeClass: UserInterfaceSizeClass?
-    
     
     private static var defaultWakeTime: Date {
         var components = DateComponents()
@@ -32,7 +27,6 @@ struct ContentView: View {
         components.minute = 0
         return Calendar.current.date(from: components) ??
             Date()
-        
     }
     
     var body: some View {
@@ -88,15 +82,13 @@ struct ContentView: View {
             .navigationViewStyle(StackNavigationViewStyle())
             
         }
-        
     }
-    
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-        .environmentObject(AppState())
+            .environmentObject(AppState())
         
     }
 }
